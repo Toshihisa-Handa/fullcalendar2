@@ -16,14 +16,7 @@ $textColor = $_POST['textColor'];
 
 
 //2. DB接続します
-try {
-  //localhostの時はこれ。さくらの場合さくらのデータベースをいれる
-  //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=tutors;charset=utf8;host=localhost','root','root');
-} catch (PDOException $e) {//$eにエラー内容が入っている。
-  exit('DBConnectError:'.$e->getMessage());//ここのDBConnectErrorはエラー時の文字表示の為、ここはなんでも良い。この項目２は基本idとpass以外コピペで覚えればOK
-}
-
+$pdo = dbcon();
 
 //３．データ登録SQL作成
 //prepare("")の中にはmysqlのSQLで入力したINSERT文を入れて修正すれば良いイメージ

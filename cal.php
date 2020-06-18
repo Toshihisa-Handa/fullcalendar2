@@ -48,7 +48,17 @@
           }, 
 //以下ではカレンダーの細かい設定をしている
           locale: 'ja',//日本語選択
-          businessHours:true,//土日を色付け
+          // businessHours:,//土日を色付け
+          businessHours:{
+            daysOfWeek: [ 1,2,3,4,5,6 ], // Monday - Thursday
+            startTime: '18:00', // a start time (10am in this example)
+            endTime: '22:00',
+
+
+
+
+
+            },//土日を色付け
           eventTimeFormat: { hour: 'numeric', minute: '2-digit' },//時間の表記を12時→12:00に
 
 //以下ではカレンダーへの日付クリックを可能にする記述
@@ -200,6 +210,7 @@ let btnAdd = document.querySelector('#btnAdd');
 
 
 
+<a href="calselect.php">登録へ戻る</a>
 
 <!-- ↓ブートストラップの読み込み -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
